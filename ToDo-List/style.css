@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.30),rgba(0,0,0,0.25)),url(https://cdn.pixabay.com/photo/2022/09/21/17/02/blue-background-7470781_640.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 400px;
+    height: auto;
+    min-height: 400px;
+    padding: 30px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    color: #eee;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.todo-input {
+    flex: auto;
+    padding: 10px 10px 10px 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.todo-input::placeholder {
+    color: #bfbfbf;
+}
+
+.add-button { 
+    border: 1px solid;
+    background: white;
+    color: rgb(49, 89, 104);
+    font-size: 35px;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+.empty-image {
+
+    width: 200px;
+    height: 240px;
+    margin: 10px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #42627ba9;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px 12px;
+    border: 3px solid #eee;
+    transition: all 0.2s ease;
+}
+
+.todo:first-child {
+    margin-top: 0;
+}
+
+.todo:last-child {
+    margin-bottom: 0;
+}
+
+.todo:hover {
+    background-color: #42627ba9;
+}
+
+.todo label {
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #eee;
+}
+
+.todo span {
+    padding-left: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+span::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-left: -30px;
+    border-radius: 100px;
+    border: 2px solid #42627ba9;
+}
+
+input[type='checkbox'] {
+    visibility: hidden;
+}
+
+input:checked+span {
+    text-decoration: line-through
+}
+
+.todo:hover input:checked+span::before,
+input:checked+span::before {
+    background: url(./Images/check.svg) 50% 50% no-repeat #09bb21;
+    border-color: #09bb21;
+}
+
+.todo:hover span::before {
+    border-color: #eee;
+}
+
+.todo .delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+    font-size: 24px;
+}
+
+.todos-container {
+    height: 300px;
+    background-color: transparent;
+    overflow: overlay;
+}
+
+.todos-container::-webkit-scrollbar-track {
+    background: rgb(247, 247, 247);
+    border-radius: 20px
+}
+
+.todos-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.todos-container:hover::-webkit-scrollbar {
+    width: 7px;
+}
+
+.todos-container::-webkit-scrollbar-thumb {
+    background: #42627ba9;
+    border-radius: 20px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.filter {
+    color: #eee;
+    padding: 5px 15px;
+    border-radius: 100px;
+    border: 2px solid white;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+.filter.active,
+.filter:hover {
+    border-radius: 5px;
+    background-color: #42627ba9;
+}
+
+.delete-all {
+    display: flex;
+    color: #eee;
+    padding: 7px 15px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+.delete-all:hover {
+    border-radius: 5px;
+    background-color: #42627ba9;
+}
